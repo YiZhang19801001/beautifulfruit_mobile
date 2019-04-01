@@ -3,6 +3,7 @@ import queryString from "query-string";
 import { connect } from "react-redux";
 
 import { queryPayment } from "../../_actions";
+import { makeDate } from "../../_helpers";
 
 import { Head } from "../shared/";
 
@@ -68,7 +69,7 @@ class Complete extends React.Component {
             {labels.complete_paid_date}
           </span>
           <span className="component-complete__trasition-information__value">
-            {date_time}
+            {makeDate(date_time)}
           </span>
         </div>
         <div className="component-complete__trasition-information__row">
