@@ -7,6 +7,7 @@ import PaymentMethodSection from "./PaymentMethodSection";
 import CustomerCommentsSection from "./CustomerCommentsSection";
 
 import { Head } from "../shared";
+import PaymentLoading from "./PaymentLoading";
 import {
   setPaymentMethod,
   makePayment,
@@ -15,13 +16,13 @@ import {
   changeCustomerComments
 } from "../../_actions";
 
-import { baseUrl } from "../../_apis";
 import { makeDate } from "../../_helpers";
 class Confirm extends React.Component {
   state = {
     showShopListSection: true,
     showPaymentMethodSection: false,
-    showCustomerCommentsSection: false
+    showCustomerCommentsSection: false,
+    showPaymentLoading: false
   };
 
   /**
@@ -148,6 +149,7 @@ class Confirm extends React.Component {
    * call makepayment action to make payment
    */
   submitPayment = () => {
+    this.setState({ showPaymentLoading: true });
     this.props.makePayment();
   };
   saveOrder = () => {
@@ -160,7 +162,15 @@ class Confirm extends React.Component {
     return (
       <React.Fragment>
         <Head title={this.props.labels.app_head_title} pageName="confirm" />
+
         <div className="component-confirm">
+          {this.state.showPaymentLoading && (
+            <PaymentLoading
+              setShowPaymentLoading={value => {
+                this.setState({ showPaymentLoading: value });
+              }}
+            />
+          )}
           {this.renderSectionHeader(
             this.props.labels.subtitle_select_date,
             "showShopListSection"
