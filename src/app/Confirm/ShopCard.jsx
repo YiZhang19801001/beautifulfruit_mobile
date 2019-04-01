@@ -67,7 +67,6 @@ class ShopCard extends React.Component {
                     : this.state.selectedDate
                 }
                 onChange={this.handleOnChange}
-                className="value"
                 disabled={location_id !== this.props.selectedShop.location_id}
               >
                 {this.renderAvaliableDates()}
