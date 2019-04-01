@@ -1,15 +1,7 @@
 import types from "./actionTypes";
 
 import { kidsnParty } from "../_apis";
-import {
-  getTotalPrice,
-  getTotal,
-  calculateTotalPrice,
-  makeOrderItemOption,
-  makeHeader,
-  makeOrderInfo,
-  makeInvoice_no
-} from "../_helpers";
+import { makeHeader, makeOrderInfo, makeInvoice_no } from "../_helpers";
 import { history } from "../history";
 const create = () => {
   return async function(dispatch, getState) {
@@ -45,6 +37,7 @@ const create = () => {
     const response = await kidsnParty.post("/payment", requestBody, {
       headers
     });
+    console.log(response.data);
 
     dispatch({ type: types.refreshShoppingCart });
 
@@ -89,20 +82,6 @@ const query = (channel, payment_id) => {
   };
 };
 
-const fetchCanceledOrder = (channel, payment_id) => {
-  return async function(dispatch) {
-    const response = await kidsnParty.get(`payment/fetchCanceledOrder`, {
-      params: {
-        channel,
-        payment_id
-      }
-    });
-    dispatch({
-      type: types.setCanceledOrder,
-      payload: response.data.order
-    });
-  };
-};
 export const setPaymentMethod = value => {
   return {
     type: types.setPaymentMethod,
@@ -113,6 +92,6 @@ export default {
   create,
   query,
   setPaymentMethod,
-  fetchCanceledOrder,
+
   continuePay
 };

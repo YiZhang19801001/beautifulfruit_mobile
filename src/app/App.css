@@ -1333,4 +1333,15 @@ hr {
   padding: 5px 15px;
 }
 
+.component-cancel button {
+  height: 35px;
+  width: 200px;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffba2d;
+  border: 2px solid #ffba2d;
+  box-shadow: 0 0 3px #d0d0d0;
+}
+
 /*# sourceMappingURL=App.css.map */

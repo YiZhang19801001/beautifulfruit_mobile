@@ -8,6 +8,7 @@ import { Confirm } from "./Confirm";
 import { Account } from "./Account";
 import { Complete } from "./Complete";
 import { history } from "../history";
+import { Cancel } from "./Cancel";
 import { PrivateRoute } from "../PrivateRoute";
 
 import { Login, Register } from "./Auth";
@@ -47,6 +48,10 @@ class App extends React.Component {
               exact
               path={`${process.env.PUBLIC_URL}/register`}
               component={Register}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/cancel/:channel`}
+              component={Cancel}
             />
             <Route
               exact
