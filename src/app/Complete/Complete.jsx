@@ -12,6 +12,11 @@ class Complete extends React.Component {
 
   componentDidMount() {
     const channel = this.props.match.params.channel;
+    console.log({
+      channel,
+      search: queryString.parse(this.props.location.search)
+    });
+
     if (channel === "poli") {
       const paymentId = queryString.parse(this.props.location.search).token;
       this.setState({ paymentId });
@@ -21,7 +26,12 @@ class Complete extends React.Component {
     if (channel === "paypal") {
     }
 
-    if (channel === "wechant" || channel === "alipay") {
+    if (channel === "WECHAT" || channel === "ALIPAY") {
+      const paymentId = queryString.parse(this.props.location.search).order_no;
+
+      this.setState({ paymentId });
+
+      this.props.queryPayment(channel, paymentId);
     }
   }
 
