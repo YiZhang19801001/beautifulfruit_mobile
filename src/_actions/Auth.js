@@ -48,7 +48,6 @@ const show = () => {
           "guoli_groupon_user",
           JSON.stringify(response.data.data)
         );
-        console.log(response.data.data);
 
         dispatch({ type: types.login, payload: response.data.data });
       } else {

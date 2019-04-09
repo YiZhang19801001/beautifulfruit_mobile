@@ -37,7 +37,6 @@ const create = () => {
     const response = await kidsnParty.post("/payment", requestBody, {
       headers
     });
-    console.log(response.data);
 
     dispatch({ type: types.refreshShoppingCart });
 

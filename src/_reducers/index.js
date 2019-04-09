@@ -15,7 +15,7 @@ const productsReducer = (products = [], action) => {
 const languageIdReducer = (language_id = 2, action) => {
   if (action.type === actionTypes.switchLanguage) {
     localStorage.setItem("aupos_language_id", action.payload);
-    console.log(localStorage.getItem("aupos_language_id"));
+
     return action.payload;
   } else if (
     action.type === actionTypes.initialApp &&
