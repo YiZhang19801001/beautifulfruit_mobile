@@ -130,7 +130,7 @@ class OrderCard extends React.Component {
     );
   };
 
-  renderOrderDetailFooter = ({ order_id, status_id }) => {
+  renderOrderDetailFooter = ({ order_id, status_id, order_items }) => {
     if (parseInt(status_id) !== 1 && parseInt(status_id) !== 6) {
       return null;
     }
@@ -153,7 +153,10 @@ class OrderCard extends React.Component {
         <div className="footer">
           <button
             onClick={() => {
-              this.props.continuePay(order_id);
+              this.props.continuePay(
+                order_id,
+                this.getTotalQuantity(order_items)
+              );
               this.setState({ isShowDetail: false });
             }}
           >

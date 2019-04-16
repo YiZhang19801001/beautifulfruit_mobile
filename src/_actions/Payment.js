@@ -48,18 +48,49 @@ const create = () => {
   };
 };
 
-const continuePay = () => {
-  return async function(dispatch, getState) {
+const continuePay = (order_id, quantity) => {
+  return async function(dispatch) {
     const headers = makeHeader();
-    const requestBody = getState().canceledOrder;
-    const response = await kidsnParty.post("/payment", requestBody, {
+    const orderResponse = await kidsnParty.get(`/orders/${order_id}`, {
+      headers
+    });
+    const order = orderResponse.data.order;
+
+    const today = new Date();
+    const timestamps = Math.floor(today / 1000);
+    const {
+      invoice_no,
+      store_id,
+      customer_id,
+      payment_method,
+      total,
+      order_items,
+      comments,
+      picked_date
+    } = order;
+
+    const requestBody = {
+      order_id,
+      invoice_no,
+      store_id,
+      customer_id,
+      channel: payment_method,
+      fax: picked_date,
+      total,
+      order_items,
+      timestamps,
+      quantity,
+      customerComments: comments
+    };
+
+    const paymentResponse = await kidsnParty.post("/payment", requestBody, {
       headers
     });
 
     dispatch({ type: types.refreshShoppingCart });
 
-    if (response.data.status === "success") {
-      window.location.href = response.data.approvel_url;
+    if (paymentResponse.data.status === "success") {
+      window.location.href = paymentResponse.data.approvel_url;
     } else {
       history.push(`${process.env.PUBLIC_URL}/`);
     }
