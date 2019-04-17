@@ -105,6 +105,7 @@ const query = (channel, payment_id) => {
         payment_id
       }
     });
+
     dispatch({
       type: types.setPaymentInformation,
       payload: response.data.payment_information

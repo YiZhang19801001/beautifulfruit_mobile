@@ -54,7 +54,13 @@ class App extends React.Component {
               component={Cancel}
             />
             <Route
+              exact
               path={`${process.env.PUBLIC_URL}/complete/:channel`}
+              component={Complete}
+            />
+            <Route
+              exact
+              path={`${process.env.PUBLIC_URL}/complete/:channel/:paymentId`}
               component={Complete}
             />
             <Route
