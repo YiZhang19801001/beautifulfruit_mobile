@@ -17,7 +17,7 @@ const login = () => {
       );
       history.push(`${process.env.PUBLIC_URL}/`);
     } else {
-      alert("email or password incorrect");
+      alert("phone no./email or password incorrect");
     }
   };
 };
