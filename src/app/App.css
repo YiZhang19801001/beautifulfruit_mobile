@@ -142,12 +142,18 @@
 .component-shopping-cart__header {
   display: flex;
   width: 100vw;
-  height: 6vh;
+  height: 7vh;
   background-color: #ffba2dcf;
   z-index: 0;
   position: fixed;
   left: 0;
   bottom: 0;
+}
+.component-shopping-cart__header .total {
+  margin-left: 5rem;
+  margin-top: 0.4rem;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .component-shopping-cart__cover {
@@ -179,9 +185,9 @@
   top: -10px;
   left: 20px;
   border-radius: 50%;
-  border: 2px solid #ffba2d;
-  width: 39px;
-  height: 39px;
+  border: 2px solid #b78115d1;
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,14 +203,14 @@
   position: absolute;
   border-radius: 50%;
   background-color: #f55747;
-  width: 15px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 13px;
   font-weight: bold;
-  left: 25px;
+  left: 28px;
   top: -5px;
   color: #fff;
 }

@@ -130,6 +130,11 @@ class ShoppingCart extends React.Component {
             className="component-shopping-cart__header"
           >
             {this.renderIcon()}
+            {getTotalPrice(this.props.shoppingCartList) > 0 && (
+              <span className="total">{`$${getTotalPrice(
+                this.props.shoppingCartList
+              )}`}</span>
+            )}
           </div>
         ) : null}
         {this.renderList()}
