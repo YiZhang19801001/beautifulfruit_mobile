@@ -41,6 +41,14 @@
   height: 40px;
   background-color: color("lightBackground");
   width: 80vw;
+  position: relative;
+  .form-error-message {
+    position: absolute;
+    font-size: 0.5rem;
+    color: red;
+    top: 0.2rem;
+    left: 30%;
+  }
 }
 .component-form__input-container {
   display: flex;

@@ -697,6 +697,13 @@ hr {
   align-items: center;
   border-bottom: 1px solid #e0dcdc;
 }
+.component-confirm__section-header.expand {
+  border-bottom: none;
+}
+.component-confirm__section-header.expand .payment-section,
+.component-confirm__section-header.expand .shop-section {
+  border-bottom: 1px solid #e0dcdc;
+}
 .component-confirm__section-header .is-done {
   width: 10%;
   display: flex;
@@ -1211,6 +1218,14 @@ hr {
   height: 40px;
   background-color: #f6f6f6;
   width: 80vw;
+  position: relative;
+}
+.component-form__form-field .form-error-message {
+  position: absolute;
+  font-size: 0.5rem;
+  color: red;
+  top: 0.2rem;
+  left: 30%;
 }
 
 .component-form__input-container {
