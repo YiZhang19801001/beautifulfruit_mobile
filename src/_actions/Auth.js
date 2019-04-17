@@ -26,6 +26,14 @@ const register = () => {
   return async function(dispatch, getState) {
     const { values } = getState().form.registerForm;
     const response = await kidsnParty.post(`/user/register`, values);
+    if (response.data.success) {
+      localStorage.setItem(
+        "guoli_groupon_user",
+        JSON.stringify(response.data.data)
+      );
+      alert("success! Thank you for joining us.");
+    }
+
     dispatch({ type: "abc", payload: response.data });
     history.push(`${process.env.PUBLIC_URL}/`);
   };
