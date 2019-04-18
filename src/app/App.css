@@ -1195,6 +1195,13 @@ hr {
   justify-content: center;
   align-items: center;
 }
+.component-form form a {
+  font-size: 0.6rem;
+  text-align: right;
+  width: 75vw;
+  margin-bottom: 1rem;
+  color: #5858df;
+}
 
 .component-form__input {
   display: flex;
