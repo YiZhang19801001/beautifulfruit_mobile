@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { login } from "../../_actions";
 
 class LoginForm extends React.Component {
@@ -45,7 +45,7 @@ class LoginForm extends React.Component {
               />
             </label>
           </div>
-
+          <Link to={`${process.env.PUBLIC_URL}/reset`}>forget password</Link>
           <button className="component-form__submit-button">
             {this.props.labels.login_form_submit_button}
           </button>
