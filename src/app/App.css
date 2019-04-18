@@ -1195,6 +1195,13 @@ hr {
   justify-content: center;
   align-items: center;
 }
+.component-form form a {
+  font-size: 0.6rem;
+  text-align: right;
+  width: 75vw;
+  margin-bottom: 1rem;
+  color: #5858df;
+}
 
 .component-form__input {
   display: flex;
@@ -1280,6 +1287,83 @@ hr {
 .right {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.component-reset-password,
+.component-new-password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 90vw;
+  padding-top: 2rem;
+  justify-content: flex-start;
+}
+.component-reset-password h3,
+.component-new-password h3 {
+  color: #8c8c8c;
+  margin-bottom: 0.5rem;
+}
+.component-reset-password p,
+.component-new-password p {
+  font-size: 0.5rem;
+  margin-top: 0;
+  padding: 0;
+  color: #acacac;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.component-reset-password p span,
+.component-new-password p span {
+  color: #f55747;
+  font-weight: bold;
+}
+.component-reset-password input,
+.component-new-password input {
+  height: 2rem;
+  width: 80%;
+  border-radius: 1rem;
+  border: 1px solid #a5a5a5;
+  padding-left: 1rem;
+  outline: none;
+}
+.component-reset-password input::placeholder,
+.component-new-password input::placeholder {
+  color: #a5a5a5;
+}
+.component-reset-password .button-container,
+.component-new-password .button-container {
+  width: 80%;
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+}
+.component-reset-password .button-container button,
+.component-new-password .button-container button {
+  height: 1.5rem;
+  width: 6rem;
+  color: #ffba2d;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 3px;
+  border: 2px solid #ffba2d;
+  background-color: #fff;
+  box-shadow: 0 0 3px #d0d0d0;
+  transition: all 200ms linear;
+  outline: none;
+}
+.component-reset-password .button-container button:active,
+.component-new-password .button-container button:active {
+  box-shadow: none;
+  background-color: #ffba2d;
+  color: #fff;
+}
+
+.component-new-password input {
+  margin-bottom: 0.5rem;
 }
 
 .component-account-information {
