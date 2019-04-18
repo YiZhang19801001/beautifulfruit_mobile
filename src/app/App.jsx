@@ -11,7 +11,7 @@ import { history } from "../history";
 import { Cancel } from "./Cancel";
 import { PrivateRoute } from "../PrivateRoute";
 
-import { Login, Register } from "./Auth";
+import { Login, Register, PasswordReset, NewPassword } from "./Auth";
 
 import "./App.css";
 
@@ -62,6 +62,15 @@ class App extends React.Component {
               exact
               path={`${process.env.PUBLIC_URL}/complete/:channel/:paymentId`}
               component={Complete}
+            />
+            <Route
+              exact
+              path={`${process.env.PUBLIC_URL}/reset`}
+              component={PasswordReset}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/newpassword/:email`}
+              component={NewPassword}
             />
             <Route
               exact
