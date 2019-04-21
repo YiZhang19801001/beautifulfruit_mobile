@@ -149,6 +149,15 @@ class Confirm extends React.Component {
    * call makepayment action to make payment
    */
   submitPayment = () => {
+    const { paymentMethod, pickedDate } = this.props;
+    if (
+      !paymentMethod ||
+      !pickedDate ||
+      (paymentMethod === "" && paymentMethod === "")
+    ) {
+      alert("please choose pick up date && payment method to continue.");
+      return false;
+    }
     this.setState({ showPaymentLoading: true });
     this.props.makePayment();
   };
